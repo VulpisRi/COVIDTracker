@@ -57,10 +57,14 @@ print()
 
 for numOfCases in range(len(order)):
 	worldResults[numOfCases] = "{:,}".format(int(worldResults[numOfCases]))
+	if worldResults[numOfCases] == "0":
+		worldResults[numOfCases] = "0 or unknown"
 	print(f"World {order[numOfCases]}: {worldResults[numOfCases]}")
 
 print()
 
 for numOfCases in range(len(order)):
 	USResults[numOfCases] = "{:,}".format(int(USResults[numOfCases]))
+	if USResults[numOfCases] == "0":
+		USResults[numOfCases] = "0 or unknown"
 	print(f"US {order[numOfCases]}: {USResults[numOfCases]}")
