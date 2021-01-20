@@ -5,6 +5,7 @@ try:
 	import requests
 except ModuleNotFoundError:
 	print("You either do not have the BeautifulSoup module or the requests module. Please download them before running this program.")
+	print("You can download BeautifulSoup from https://www.crummy.com/software/BeautifulSoup/")
 	exit()
 
 #Set up to scrape
