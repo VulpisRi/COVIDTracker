@@ -2,10 +2,15 @@ import re
 from datetime import datetime
 try:
 	from bs4 import BeautifulSoup
+except ModuleNotFoundError:
+	print("You do not have the BeautifulSoup module, which is required to run this program.")
+	print("You can download BeautifulSoup from https://www.crummy.com/software/BeautifulSoup/ or running the command 'pip3 install beautifulsoup4' in your command line")
+	exit()
+try:
 	import requests
 except ModuleNotFoundError:
-	print("You either do not have the BeautifulSoup module or the requests module. Please download them before running this program.")
-	print("You can download BeautifulSoup from https://www.crummy.com/software/BeautifulSoup/")
+	print("You do not have the requests module. Please download it before running this program.")
+	print("You can download requests by running the command 'pip3 install requests' in your command line")
 	exit()
 
 #Set up to scrape
