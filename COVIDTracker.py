@@ -51,20 +51,14 @@ timeSinceUpdate = timeSinceUpdate.split(":")
 timeSinceUpdate = int(timeSinceUpdate[0]) * 60 + int(timeSinceUpdate[1])
 
 #Prints the data
+def printData(resultName, place):
+	print()
+	for numOfCases in range(len(order)):
+		resultName[numOfCases] = "{:,}".format(int(resultName[numOfCases]))
+		if resultName[numOfCases] == "0":
+			resultName[numOfCases] = "0 or unknown"
+		print(f"{place} {order[numOfCases]}: {resultName[numOfCases]}")	
+
 print(f"Last updated {timeSinceUpdate} minutes ago")
-
-print()
-
-for numOfCases in range(len(order)):
-	worldResults[numOfCases] = "{:,}".format(int(worldResults[numOfCases]))
-	if worldResults[numOfCases] == "0":
-		worldResults[numOfCases] = "0 or unknown"
-	print(f"World {order[numOfCases]}: {worldResults[numOfCases]}")
-
-print()
-
-for numOfCases in range(len(order)):
-	USResults[numOfCases] = "{:,}".format(int(USResults[numOfCases]))
-	if USResults[numOfCases] == "0":
-		USResults[numOfCases] = "0 or unknown"
-	print(f"US {order[numOfCases]}: {USResults[numOfCases]}")
+printData(worldResults, "World")
+printData(USResults, "US")
